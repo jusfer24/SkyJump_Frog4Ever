@@ -1,3 +1,5 @@
+using System.ComponentModel;
+using System.Collections; 
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -17,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     private bool isDie;
-    private float cont = 0f;
 
     private Rigidbody2D rb;
     private float horizontalInput;
@@ -33,8 +34,6 @@ public class PlayerController : MonoBehaviour
         {
             horizontalInput = Input.GetAxisRaw("Horizontal") * Time.deltaTime * velocidad;
             animator.SetFloat("movement", horizontalInput * velocidad);
-
-
 
             if (horizontalInput < 0)
             {
@@ -53,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
+                playerSoundController.playSaltar();
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             }
 
@@ -66,20 +66,35 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(horizontalInput * velocidad, rb.linearVelocity.y);
     }
 
-    //public void MorirPlayer()
-    //{
-    //    if (!isDie)
-    //    {
-    //        isDie = true;
-    //    }
-    //}
+    public void MorirPlayer()
+    {
+        StartCoroutine(IniciarMuerte());
+    }
+
+    private IEnumerator IniciarMuerte()
+    {
+        if (!isDie)
+        {
+            isDie = true;
+
+            if (GameManager.instance != null)
+            {
+                animator.SetBool("isdiying", isDie);
+                playerSoundController.playMorir();
+
+                yield return new WaitForSeconds(2.5f);
+
+                GameManager.instance.GameOver();
+            }
+        }
+    }
 
     private void OnDrawGizmos()
     {
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + Vector3.down * longitudRaycast);
-        }
+            if (groundCheck != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(transform.position, transform.position + Vector3.down * longitudRaycast);
+            }
     }
 }
