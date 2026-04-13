@@ -1927,7 +1927,7 @@ GameObject:
   - component: {fileID: 1498719565}
   - component: {fileID: 1498719564}
   m_Layer: 0
-  m_Name: demo01_PixelSky
+  m_Name: Dia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
