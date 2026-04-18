@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d75f7f90410ccc34b8787e8db6537d9e
+guid: ac668724a7c24b746bb1a9bce273cd0b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8678806945160825304
-    second: MainMenu_Frog4Ever_0
+      213: -1843844325376781324
+    second: Win_BG_Frog4Ever_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,11 +109,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainMenu_Frog4Ever_0
+      name: Win_BG_Frog4Ever_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 826fe7fc01fae8780800000000000000
-      internalID: -8678806945160825304
+      spriteID: 4f31cccea595966e0800000000000000
+      internalID: -1843844325376781324
       vertices: []
       indices: 
       edges: []
@@ -138,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MainMenu_Frog4Ever_0: -8678806945160825304
+      Win_BG_Frog4Ever_0: -1843844325376781324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
